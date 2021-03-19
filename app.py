@@ -11,7 +11,7 @@ def homepage():
 def signin():
     session["account"] = "test"
     session["password"] = "test"
-    if request.form["account"] == session["account"]:
+    if request.form["account"] == session["account"] and request.form["password"] == session["password"]:
         return redirect(url_for("member"))
     else:
         return  redirect(url_for("error"))
